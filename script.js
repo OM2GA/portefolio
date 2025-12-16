@@ -155,4 +155,41 @@ window.addEventListener("scroll", () => {
   });
 });
 
+// === Gestion du bouton copier l'email ===
+const contactBtn = document.querySelector(".btn-contact");
+const copyIcon = document.querySelector(".icon-copy");
+
+if (contactBtn && copyIcon) {
+  contactBtn.addEventListener("click", () => {
+    const email = "maxence.coste.mc@gmail.com";
+
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(email).then(() => {
+        // Animation de l'icône
+        copyIcon.style.transform = "scale(1.4)";
+        setTimeout(() => {
+          copyIcon.style.transform = "scale(1)";
+        }, 200);
+
+        // Feedback visuel (changement d'icône et titre)
+        const originalTitle = copyIcon.getAttribute("title");
+        const originalSrc = copyIcon.getAttribute("src");
+
+        copyIcon.setAttribute("title", "Email copié !");
+        copyIcon.setAttribute("src", "images/icons/check.svg");
+
+        setTimeout(() => {
+          copyIcon.setAttribute("title", originalTitle);
+          copyIcon.setAttribute("src", originalSrc);
+        }, 2000);
+      }).catch(err => {
+        console.error("Erreur copie :", err);
+      });
+    } else {
+      // Fallback simple
+      alert("Copie impossible (contexte sécurisé requis). Email : " + email);
+    }
+  });
+}
+
 

@@ -34,7 +34,7 @@ body.dark {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", sans-serif;
   background: var(--surface-container);
   color: var(--on-surface);
   margin: 0;

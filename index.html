@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maxence Coste - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!-- === NAVBAR PRINCIPALE === -->
+  <header class="app-bar">
+    <div class="container app-bar-inner">
+      <label class="toggle" title="Basculer le thème">
+        <input type="checkbox" id="dark-mode-toggle">
+        <span class="slider">
+          <img src="images/icons/dark_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode sombre"
+            class="icon moon">
+          <img src="images/icons/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode clair"
+            class="icon sun">
+        </span>
+      </label>
+      <nav class="nav-links">
+        <a href="#about" class="ripple">À propos</a>
+        <a href="#projects" class="ripple">Mes projets</a>
+        <a href="#contact" class="ripple">Contact</a>
+      </nav>
+      <a href="images/CV Maxence Coste.pdf" target="_blank" rel="noopener noreferrer" class="btn-download ripple">
+        <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Télécharger"
+          class="icon-download">
+        Télécharger mon CV
+      </a>
+    </div>
+  </header>
+
+  <!-- === MENU LATÉRAL (affiché au scroll) === -->
+  <div class="side-menu hidden">
+    <!-- Gélule 1 : thème -->
+    <div class="pill">
+      <label class="toggle" title="Basculer le thème">
+        <input type="checkbox" id="dark-mode-toggle-side">
+        <span class="slider">
+          <img src="images/icons/dark_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode sombre"
+            class="icon moon">
+          <img src="images/icons/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode clair"
+            class="icon sun">
+        </span>
+      </label>
+    </div>
+    <!-- Gélule 2 : navigation -->
+    <div class="pill nav-pill">
+      <a href="#about" class="tooltip" data-label="À propos">
+        <img src="images/icons/info_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="À propos">
+      </a>
+      <a href="#projects" class="tooltip" data-label="Mes projets">
+        <img src="images/icons/folder_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mes projets">
+      </a>
+      <a href="#contact" class="tooltip" data-label="Contact">
+        <img src="images/icons/person_book_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Contact">
+      </a>
+    </div>
+    <!-- Gélule 3 : CV -->
+    <div class="pill">
+      <a href="images/CV Maxence Coste.pdf" target="_blank" class="tooltip" data-label="Télécharger CV">
+        <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Télécharger le CV">
+      </a>
+    </div>
+  </div>
+
+  <!-- === CONTENU === -->
+  <section id="about" class="hero container">
+    <div class="about-content">
+      <div class="about-text">
+        <h1>À propos</h1>
+
+        <p>Actuellement en deuxième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'Université Gustave
+          Eiffel à Meaux, je m'oriente vers l'UX/UI design.</p>
+
+        <p>Mon objectif est de m'impliquer à 100 % dans des projets visuels et interactifs. Curieux et polyvalent,
+          j'aime
+          explorer la frontière entre le design et la technique.</p>
+
+        <h3 class="hero-skills-title">Mon parcours & Mes compétences</h3>
+
+        <p>J'ai récemment affiné mon expertise lors d'un stage en tant qu'Assistant UX Designer à la Société Générale.
+          Cette expérience m'a permis de travailler au cœur d'une équipe pluridisciplinaire (UX/UI, IT, métiers
+          financiers). J'y ai notamment contribué à la conception de supports explicatifs vidéo et à l'adaptation de
+          maquettes sur Figma, tout en analysant les besoins réels des utilisateurs.</p>
+
+        <p>Au-delà du design d'interface et du prototypage (Figma), je possède des compétences techniques en
+          développement
+          web (HTML, CSS, Bootstrap, JS/PHP) qui me permettent de mieux comprendre les contraintes d'intégration.</p>
+
+        <p>Pour ce qui est de ma personnalité, je n'ai aucune difficulté à m'intégrer dans un groupe et à collaborer,
+          que
+          ce soit dans le cadre professionnel ou personnel. Je suis passionné de technologie, mais également de sport,
+          je
+          suis effectivement un grand fan de football (supporter du PSG) et je pratique la course à pieds où j'ai des
+          objectifs ambitieux.</p>
+
+        <p>Je suis aujourd'hui prêt à relever de nouveaux défis pour continuer à progresser et acquérir de l'expérience.
+        </p>
+      </div>
+
+      <div class="about-visuals">
+        <img src="images/pp_maxence.jpg" alt="Maxence Coste" class="profile-photo">
+        <div class="skills-logos">
+          <img src="images/logos/html.png" alt="HTML" title="HTML">
+          <img src="images/logos/css.png" alt="CSS" title="CSS">
+          <img src="images/logos/js.png" alt="JavaScript" title="JavaScript">
+          <img src="images/logos/php.svg" alt="PHP" title="PHP">
+          <img src="images/logos/bootstrap.png" alt="Bootstrap" title="Bootstrap">
+          <img src="images/logos/figma.svg" alt="Figma" title="Figma">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects container">
+    <h2>Mes projets</h2>
+    <div class="project-grid">
+      <!-- Projet 1 -->
+      <div class="card">
+        <div class="card-image"
+          style="background-image: url('images/projet1.jpg'); background-size: cover; background-position: center;">
+        </div>
+        <h3>Portfolio Personnel</h3>
+        <p>Conception et développement de mon portfolio en HTML, CSS et JavaScript. Intégration d'un mode sombre et
+          d'animations fluides.</p>
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JS</span>
+        </div>
+      </div>
+
+      <!-- Projet 2 -->
+      <div class="card">
+        <div class="card-image"
+          style="background-image: url('images/projet2.jpg'); background-size: cover; background-position: center;">
+        </div>
+        <h3>Site E-commerce</h3>
+        <p>Prototype d'un site de vente en ligne avec gestion du panier et catalogue produits dynamique.</p>
+        <div class="tags">
+          <span>React</span>
+          <span>Node.js</span>
+          <span>MongoDB</span>
+        </div>
+      </div>
+
+      <!-- Projet 3 -->
+      <div class="card">
+        <div class="card-image"
+          style="background-image: url('images/projet3.jpg'); background-size: cover; background-position: center;">
+        </div>
+        <h3>Application Météo</h3>
+        <p>Application web permettant de consulter la météo en temps réel via une API externe.</p>
+        <div class="tags">
+          <span>Vue.js</span>
+          <span>API REST</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="about container">
+    <h2>Contact</h2>
+    <p>Je suis prêt à collaborer sur de nouveaux projets.</p>
+    <div class="btn-contact ripple">
+      <span class="default-text">Me contacter</span>
+      <span class="hover-content">maxence.coste.mc@gmail.com</span>
+    </div>
+  </section>
+
+  <footer id="contact" class="footer">
+    <p>© 2025 Maxence Coste — Tous droits réservés</p>
+    <a href="https://www.linkedin.com/in/maxence-c-62aaa0264/" target="_blank" class="footer-link ripple">
+      <img src="images/icons/linkedin.svg" alt="LinkedIn">
+      Je suis sur LinkedIn
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

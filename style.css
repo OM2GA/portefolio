@@ -920,3 +920,36 @@ body.dark .pill a.active img {
 
 /* === Effet 4 : Contour "Arc-en-ciel" (RETIRÉ) === */
 /* ... (toutes les règles .nav-links a::before, ::after, :hover::before, :hover::after ont été supprimées) ... */
+
+/* === Custom Scrollbar (Bubble Style) === */
+::-webkit-scrollbar {
+  width: 24px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 20px;
+  border: 7px solid transparent;
+  background-clip: content-box;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary);
+  border-width: 5px;
+  /* Grows thicker on hover */
+}
+
+/* Firefox */
+@supports (scrollbar-color: auto) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) transparent;
+  }
+}

@@ -103,13 +103,14 @@ window.addEventListener('scroll', () => {
   const currentScroll = window.scrollY;
 
 
-  if (currentScroll > 50) {
-    appBar.style.transform = 'translateY(-100%)';
-    sideMenu.classList.remove('hidden');
-  } else {
-
-    appBar.style.transform = 'translateY(0)';
-    sideMenu.classList.add('hidden');
+  if (appBar && sideMenu) {
+    if (currentScroll > 50) {
+      appBar.style.transform = 'translateY(-100%)';
+      sideMenu.classList.remove('hidden');
+    } else {
+      appBar.style.transform = 'translateY(0)';
+      sideMenu.classList.add('hidden');
+    }
   }
 
 
@@ -129,7 +130,7 @@ window.addEventListener('scroll', () => {
 
 window.addEventListener('load', () => {
   if (window.scrollY > 50) {
-    sideMenu.classList.remove('hidden');
+    if (sideMenu) sideMenu.classList.remove('hidden');
     document.querySelectorAll('.tooltip').forEach(el => el.classList.add('show-label'));
   }
 });

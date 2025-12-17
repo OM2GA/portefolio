@@ -198,3 +198,18 @@ if (contactBtn && copyIcon) {
 }
 
 
+
+
+
+// === Back to Top Visibility ===
+const backToTopBtn = document.getElementById("back-to-top");
+
+window.addEventListener("scroll", () => {
+  if (backToTopBtn) {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add("visible");
+    } else {
+      backToTopBtn.classList.remove("visible");
+    }
+  }
+});

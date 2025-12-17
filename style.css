@@ -953,3 +953,65 @@ body.dark .pill a.active img {
     scrollbar-color: var(--primary) transparent;
   }
 }
+
+/* === Back to Top Button (Standalone Bubble) === */
+.btn-back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--surface);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--outline);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease, border-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.btn-back-to-top img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0.3);
+  transition: filter 0.3s ease;
+}
+
+body.dark .btn-back-to-top {
+  background: var(--surface-container);
+  border-color: var(--outline);
+}
+
+body.dark .btn-back-to-top img {
+  filter: brightness(1);
+}
+
+.btn-back-to-top:hover {
+  background: var(--surface-container);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+body.dark .btn-back-to-top:hover {
+  background: var(--surface);
+}
+
+.btn-back-to-top:hover img {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(40%) saturate(2250%) hue-rotate(228deg) brightness(88%) contrast(84%);
+}
+
+body.dark .btn-back-to-top:hover img {
+  filter: brightness(0) saturate(100%) invert(88%) sepia(19%) saturate(4155%) hue-rotate(192deg) brightness(103%) contrast(101%);
+}

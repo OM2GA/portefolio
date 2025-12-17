@@ -10,156 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <style>
-        .project-hero {
-            padding: 8rem 0 4rem;
-            text-align: center;
-        }
 
-        .project-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        .project-hero .subtitle {
-            font-size: 1.5rem;
-            opacity: 0.8;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .project-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .meta-item {
-            background: var(--surface-container);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--outline);
-        }
-
-        .meta-item h4 {
-            margin: 0 0 0.5rem;
-            color: var(--primary);
-        }
-
-        .meta-item p {
-            margin: 0;
-            font-size: 0.95rem;
-        }
-
-        .project-section {
-            padding: 4rem 0;
-        }
-
-        .project-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--on-surface);
-        }
-
-        .project-section h3 {
-            color: var(--primary);
-            margin-top: 2rem;
-        }
-
-        .project-section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            color: var(--on-surface);
-            opacity: 0.9;
-        }
-
-        .two-col {
-            display: flex;
-            gap: 3rem;
-            align-items: flex-start;
-            margin-top: 2rem;
-        }
-
-        .col-content {
-            flex: 1;
-        }
-
-        .col-visual {
-            flex: 1;
-        }
-
-        /* Styles pour les placeholders d'images (à remplacer par tes screenshots) */
-        .visual-placeholder {
-            background-color: var(--surface-container);
-            width: 100%;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-radius: 16px;
-            color: var(--on-surface);
-            font-weight: bold;
-            margin-bottom: 1rem;
-            border: 2px dashed var(--outline);
-            padding: 1rem;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .visual-placeholder:hover {
-            border-color: var(--primary);
-            background-color: var(--surface);
-        }
-
-        .visual-placeholder.tall {
-            min-height: 500px;
-        }
-
-        .code-block {
-            background: #2b2930;
-            color: #eaddff;
-            padding: 1.5rem;
-            border-radius: 12px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            overflow-x: auto;
-            margin: 1rem 0;
-            border: 1px solid var(--outline);
-            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .stat-card {
-            background: var(--primary-container);
-            color: var(--on-primary-container);
-            padding: 1.5rem;
-            border-radius: 16px;
-            text-align: center;
-            margin-top: 1rem;
-        }
-
-        .stat-score {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            .two-col {
-                flex-direction: column;
-            }
-
-            .project-hero h1 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
 </head>
 
 <body id="top">
@@ -229,19 +80,17 @@
     </a>
 
     <section class="project-hero container">
-        <div style="margin-bottom: 1rem;">
-            <span
-                style="background: var(--primary-container); color: var(--primary); padding: 0.5rem 1rem; border-radius: 99px; font-weight: bold; font-size: 0.9rem;">Projet
+        <div class="project-tag-container">
+            <span class="project-tag">Projet
                 Personnel</span>
         </div>
         <h1>Les 20 Bornes d'Andrésy</h1>
         <div class="subtitle">Refonte complète et modernisation du portail web d'un événement sportif local majeur.
         </div>
 
-        <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--on-surface);">
+        <p class="project-link-note">
             Si vous le souhaitez, vous pouvez consulter le site en ligne à ce lien :
-            <a href="https://20bornes-andresy.netlify.app/" target="_blank"
-                style="color: var(--primary); font-weight: bold; text-decoration: underline;">
+            <a href="https://20bornes-andresy.netlify.app/" target="_blank" class="project-external-link">
                 20bornes-andresy.netlify.app
             </a>
         </p>
@@ -276,7 +125,7 @@
             </div>
             <div class="col-visual">
                 <img src="images/mockup_pc_mobile.png" alt="Mockup comparatif Mobile vs Desktop"
-                    style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    class="project-img-shadow">
             </div>
         </div>
     </section>
@@ -290,7 +139,7 @@
         <div class="two-col">
             <div class="col-visual">
                 <img src="images/accueil_20bornes.png" alt="Aperçu de la page d'accueil avec formes organiques"
-                    style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    class="project-img-shadow">
             </div>
             <div class="col-content">
                 <h3>Dynamisme visuel</h3>
@@ -306,8 +155,7 @@
         </div>
     </section>
 
-    <section class="project-section container"
-        style="background: var(--surface-container); border-radius: 24px; padding: 3rem;">
+    <section class="project-section container project-highlight-section">
         <h2>Développement & Intégration</h2>
         <p>J'ai choisi <strong>Bootstrap 5.3</strong> pour sa fiabilité et pour accélérer le développement de la grille
             responsive. Cependant, je ne voulais pas d'un site "standard". J'ai donc développé une couche CSS
@@ -355,7 +203,7 @@
                 <p>Le résultat est sans appel sur <em>Google PageSpeed Insights</em> :</p>
             </div>
             <div class="col-visual">
-                <div style="display: flex; gap: 1rem; justify-content: center;">
+                <div class="project-stat-container">
                     <div class="stat-card">
                         <div class="stat-score">100</div>
                         <div>SEO</div>
@@ -369,21 +217,21 @@
                         <div>Bonnes Pratiques</div>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">
+                <div class="project-stat-caption">
                     Scores obtenus sur Desktop via PageSpeed Insights
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="project-section container" style="text-align: center; padding-bottom: 6rem;">
+    <section class="project-section container project-footer-section">
         <h2>Et la suite ?</h2>
-        <p style="max-width: 800px; margin: 0 auto 2rem;">Le projet est fonctionnel et prêt à être présenté. Pour une
+        <p class="project-footer-text">Le projet est fonctionnel et prêt à être présenté. Pour une
             version "v2", j'envisage de remplacer les formes abstraites par des photos réelles des éditions précédentes,
             ce qui est une norme appréciée dans le milieu de la course à pied. J'attends avec impatience les retours de
             la mairie pour pousser le projet encore plus loin.</p>
 
-        <a href="index.html#projects" class="btn-download ripple" style="text-decoration: none;">
+        <a href="index.html#projects" class="btn-download ripple">
             ← Retour aux projets
         </a>
     </section>

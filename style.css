@@ -305,6 +305,8 @@ body.dark .nav-links a img {
   background: var(--outline);
   border-radius: 8px;
   margin-bottom: 1rem;
+  background-size: cover;
+  background-position: center;
 }
 
 .tags span {
@@ -1179,4 +1181,248 @@ body.dark .btn-back-to-top:hover {
 
 body.dark .btn-back-to-top:hover img {
   filter: brightness(0) saturate(100%) invert(88%) sepia(19%) saturate(4155%) hue-rotate(192deg) brightness(103%) contrast(101%);
+}
+
+/* === Integration Styles from Project Pages === */
+.project-hero {
+  padding: 8rem 0 4rem;
+  text-align: center;
+}
+
+.project-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.project-hero .subtitle {
+  font-size: 1.5rem;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.meta-item {
+  background: var(--surface-container);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--outline);
+}
+
+.meta-item h4 {
+  margin: 0 0 0.5rem;
+  color: var(--primary);
+}
+
+.meta-item p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.project-section {
+  padding: 4rem 0;
+}
+
+.project-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--on-surface);
+}
+
+.project-section h3 {
+  color: var(--primary);
+  margin-top: 2rem;
+}
+
+.project-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: var(--on-surface);
+  opacity: 0.9;
+}
+
+.two-col {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.col-content {
+  flex: 1;
+}
+
+.col-visual {
+  flex: 1;
+}
+
+.code-block {
+  background: #2b2930;
+  color: #eaddff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid var(--outline);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card {
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  margin-top: 1rem;
+  min-width: 120px;
+}
+
+.stat-score {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* Styles pour les placeholders d'images */
+.visual-placeholder {
+  background-color: var(--surface-container);
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  color: var(--on-surface);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border: 2px dashed var(--outline);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.visual-placeholder:hover {
+  border-color: var(--primary);
+  background-color: var(--surface);
+}
+
+.visual-placeholder.tall {
+  min-height: 500px;
+}
+
+@media (max-width: 768px) {
+  .two-col {
+    flex-direction: column;
+  }
+
+  .project-hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Styles extraits des attributs style="..." */
+.project-tag-container {
+  margin-bottom: 1rem;
+}
+
+.project-tag {
+  background: var(--primary-container);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.project-link-note {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--on-surface);
+}
+
+.project-external-link {
+  color: var(--primary);
+  font-weight: bold;
+  text-decoration: underline;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.project-img-shadow {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-highlight-section {
+  background: var(--surface-container);
+  border-radius: 24px;
+  padding: 3rem;
+}
+
+.project-stat-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.project-stat-caption {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.project-footer-section {
+  text-align: center;
+  padding-bottom: 6rem;
+}
+
+.project-footer-text {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+/* === New Project Specifics (Decathlon/Oishi) === */
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.challenge-levels {
+  list-style: none;
+  padding: 0;
+}
+
+.challenge-levels li {
+  background: var(--surface);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+}
+
+.challenge-levels strong {
+  color: var(--primary);
+}
+
+.project-img-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }

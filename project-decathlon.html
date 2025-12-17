@@ -10,153 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <style>
-        /* --- Styles spécifiques à la page projet (identique à 20 Bornes) --- */
-        .project-hero {
-            padding: 8rem 0 4rem;
-            text-align: center;
-        }
 
-        .project-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        .project-hero .subtitle {
-            font-size: 1.5rem;
-            opacity: 0.8;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .project-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .meta-item {
-            background: var(--surface-container);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--outline);
-        }
-
-        .meta-item h4 {
-            margin: 0 0 0.5rem;
-            color: var(--primary);
-        }
-
-        .meta-item p {
-            margin: 0;
-            font-size: 0.95rem;
-        }
-
-        .project-section {
-            padding: 4rem 0;
-        }
-
-        .project-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--on-surface);
-        }
-
-        .project-section h3 {
-            color: var(--primary);
-            margin-top: 2rem;
-        }
-
-        .project-section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            color: var(--on-surface);
-            opacity: 0.9;
-        }
-
-        .two-col {
-            display: flex;
-            gap: 3rem;
-            align-items: flex-start;
-            margin-top: 2rem;
-        }
-
-        .col-content {
-            flex: 1;
-        }
-
-        .col-visual {
-            flex: 1;
-        }
-
-        .code-block {
-            background: #2b2930;
-            color: #eaddff;
-            padding: 1.5rem;
-            border-radius: 12px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            overflow-x: auto;
-            margin: 1rem 0;
-            border: 1px solid var(--outline);
-            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .stat-card {
-            background: var(--primary-container);
-            color: var(--on-primary-container);
-            padding: 1.5rem;
-            border-radius: 16px;
-            text-align: center;
-            margin-top: 1rem;
-            min-width: 120px;
-        }
-
-        .stat-score {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Liste des niveaux du défi */
-        .challenge-levels {
-            list-style: none;
-            padding: 0;
-        }
-
-        .challenge-levels li {
-            background: var(--surface);
-            margin-bottom: 1rem;
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary);
-        }
-
-        .challenge-levels strong {
-            color: var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            .two-col {
-                flex-direction: column;
-            }
-
-            .project-hero h1 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
 </head>
 
 <body id="top">
@@ -225,21 +79,20 @@
     </a>
 
     <section class="project-hero container">
-        <div style="margin-bottom: 1rem;">
-            <span
-                style="background: var(--primary-container); color: var(--primary); padding: 0.5rem 1rem; border-radius: 99px; font-weight: bold; font-size: 0.9rem;">Hackathon
+        <div class="project-tag-container">
+            <span class="project-tag">Hackathon
                 / Nuit de l'Info</span>
         </div>
         <h1>Decathlon Profiler</h1>
         <div class="subtitle">Conception et développement d'un outil de profilage sportif en moins de 2h.
         </div>
 
-        <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--on-surface);">
+        <p class="project-link-note">
             Ce projet a été réalisé lors de la Nuit de l'Info, un défi national étudiant de développement web du coucher
             au lever du soleil.
             <br>
             <a href="https://github.com/OM2GA/decathlon_nuit_de_l_info.git" target="_blank"
-                style="color: var(--primary); font-weight: bold; text-decoration: underline; margin-top: 10px; display: inline-block;">
+                class="project-external-link">
                 Voir le code sur GitHub
             </a>
         </p>
@@ -283,8 +136,8 @@
             </div>
             <div class="col-visual">
                 <img src="images/decathlon_questionnaire.png" alt="Interface du Questionnaire Decathlon"
-                    style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-bottom: 1rem;">
-                <div style="text-align: center; font-size: 0.9rem; opacity: 0.7;">
+                    class="project-img-shadow" style="margin-bottom: 1rem;">
+                <div class="project-img-caption">
                     Interface du questionnaire interactif
                 </div>
             </div>
@@ -300,7 +153,7 @@
         <div class="two-col">
             <div class="col-visual">
                 <img src="images/decathlon_accueil.png" alt="Page d'accueil Decathlon Profiler"
-                    style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    class="project-img-shadow">
             </div>
             <div class="col-content">
                 <h3>Identité Visuelle</h3>
@@ -316,8 +169,7 @@
         </div>
     </section>
 
-    <section class="project-section container"
-        style="background: var(--surface-container); border-radius: 24px; padding: 3rem;">
+    <section class="project-section container project-highlight-section">
         <h2>Architecture & Code</h2>
         <p>Contrainte de temps oblige, j'ai opté pour une architecture <strong>100% statique</strong> (pas de base de
             données). Tout le "cerveau" de l'application réside dans le navigateur client via JavaScript.</p>
@@ -373,7 +225,7 @@
                 </ul>
             </div>
             <div class="col-visual">
-                <div style="display: flex; gap: 1rem; justify-content: center;">
+                <div class="project-stat-container">
                     <div class="stat-card">
                         <div class="stat-score">2h</div>
                         <div class="stat-label">Durée Dev</div>
@@ -391,8 +243,8 @@
         </div>
     </section>
 
-    <section class="project-section container" style="text-align: center; padding-bottom: 6rem;">
-        <a href="index.html#projects" class="btn-download ripple" style="text-decoration: none;">
+    <section class="project-section container project-footer-section">
+        <a href="index.html#projects" class="btn-download ripple">
             ← Retour aux projets
         </a>
     </section>

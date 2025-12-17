@@ -108,6 +108,11 @@ window.addEventListener('scroll', () => {
 
 
   if (appBar && sideMenu) {
+    // Si le menu mobile est ouvert, on ne fait RIEN (on laisse le header visible)
+    if (document.querySelector('.nav-content.active')) {
+      return;
+    }
+
     if (currentScroll > 50) {
       appBar.style.transform = 'translateY(-100%)';
       sideMenu.classList.remove('hidden');
@@ -128,8 +133,18 @@ window.addEventListener('scroll', () => {
     }
   }, 700);
 
+  scrollTimeout = setTimeout(() => {
+    if (currentScroll > 50) {
+      document.querySelectorAll('.tooltip').forEach(el => el.classList.add('show-label'));
+    }
+  }, 700);
+
   lastScrollTop = currentScroll;
 });
+
+// === FIX: Empêcher le transform CSS de casser le position:fixed du menu mobile ===
+// Lorsque le menu est ouvert, on doit forcer le header à ne pas avoir de transform
+// pour que le menu puisse s'afficher en plein écran correctement.
 
 
 window.addEventListener('load', () => {
@@ -213,3 +228,43 @@ window.addEventListener("scroll", () => {
     }
   }
 });
+
+// === Burger Menu Logic ===
+const burgerMenu = document.querySelector('.burger-menu');
+const navContent = document.querySelector('.nav-content');
+
+if (burgerMenu && navContent) {
+  burgerMenu.addEventListener('click', () => {
+    burgerMenu.classList.toggle('active');
+    navContent.classList.toggle('active');
+
+    const isActive = navContent.classList.contains('active');
+    document.body.style.overflow = isActive ? 'hidden' : '';
+
+    // FIX: Si le menu est ouvert, on enlève le transform du header
+    if (appBar) {
+      if (isActive) {
+        appBar.style.transform = 'none';
+        appBar.style.transition = 'none'; // Désactiver la transition pour éviter le lag visuel
+      } else {
+        appBar.style.transform = ''; // Rétablir le comportement par défaut
+        appBar.style.transition = '';
+      }
+    }
+  });
+
+  // Close menu when clicking a link
+  navContent.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      burgerMenu.classList.remove('active');
+      navContent.classList.remove('active');
+      document.body.style.overflow = '';
+
+      // Rétablir le header
+      if (appBar) {
+        appBar.style.transform = '';
+        appBar.style.transition = '';
+      }
+    });
+  });
+}

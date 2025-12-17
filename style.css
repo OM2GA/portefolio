@@ -128,6 +128,51 @@ body.dark .moon {
 }
 
 /* === Navigation === */
+.burger-menu {
+  display: none;
+  /* Caché sur desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2000;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.burger-menu span {
+  width: 100%;
+  height: 3px;
+  background: var(--on-surface);
+  border-radius: 4px;
+  transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6), opacity 0.3s ease, background-color 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animation Burger -> X */
+.burger-menu.active span:nth-child(1) {
+  transform: translateY(10.5px) rotate(45deg);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* Wrapper pour les liens et le bouton sur Desktop */
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .nav-links {
   display: flex;
   gap: 0.2rem;
@@ -751,13 +796,70 @@ body.dark .footer-link:hover img {
 /* === Responsive === */
 @media (max-width: 768px) {
   .app-bar-inner {
-    flex-direction: column;
-    gap: 0.5rem;
-    height: auto;
+    height: 64px;
+    /* Hauteur un peu réduite sur mobile */
   }
 
+  .burger-menu {
+    display: flex;
+    /* Afficher le menu burger */
+  }
+
+  /* Le wrapper qui contient les liens et le bouton download devient le menu plein écran */
+  .nav-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--surface);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    /* Important pour le padding */
+
+    /* Animation d'entrée */
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1500;
+    /* Au-dessus de tout sauf du burger */
+
+    /* Ombre interne subtile */
+    box-shadow: inset 10px 0 20px -10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* État ouvert */
+  .nav-content.active {
+    transform: translateX(0);
+  }
+
+  /* Ajustements des liens dans le menu mobile */
   .nav-links {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  /* Masquer les icônes dans le menu mobile pour plus de clarté, ou les garder, au choix.
+     Ici on les garde mais on grossit le texte */
+
+  .btn-download {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.1rem;
   }
 }
 

@@ -477,6 +477,17 @@ body.dark .nav-links a img {
   justify-content: center;
 }
 
+.about-card-icon img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0.3);
+  transition: filter 0.3s ease;
+}
+
+body.dark .about-card-icon img {
+  filter: brightness(1);
+}
+
 .about-card-header h3 {
   font-size: 1.1rem;
   font-weight: 500;
@@ -504,13 +515,27 @@ body.dark .nav-links a img {
 /* Carte Expérience - Styles spécifiques */
 .experience-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  align-items: center;
+  gap: 1rem;
   padding: 0.75rem 1rem;
   background: var(--surface-container);
   border-radius: 12px;
   margin-bottom: 1rem;
   border-left: 3px solid var(--primary);
+}
+
+.experience-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.experience-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .experience-role {

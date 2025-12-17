@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decathlon Profiler - Nuit de l'Info - Maxence Coste</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        /* --- Styles spécifiques à la page projet (identique à 20 Bornes) --- */
+        .project-hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .project-hero .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .meta-item {
+            background: var(--surface-container);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--outline);
+        }
+
+        .meta-item h4 {
+            margin: 0 0 0.5rem;
+            color: var(--primary);
+        }
+
+        .meta-item p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .project-section {
+            padding: 4rem 0;
+        }
+
+        .project-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--on-surface);
+        }
+
+        .project-section h3 {
+            color: var(--primary);
+            margin-top: 2rem;
+        }
+
+        .project-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: var(--on-surface);
+            opacity: 0.9;
+        }
+
+        .two-col {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            margin-top: 2rem;
+        }
+
+        .col-content {
+            flex: 1;
+        }
+
+        .col-visual {
+            flex: 1;
+        }
+
+        .code-block {
+            background: #2b2930;
+            color: #eaddff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid var(--outline);
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-card {
+            background: var(--primary-container);
+            color: var(--on-primary-container);
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 1rem;
+            min-width: 120px;
+        }
+
+        .stat-score {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Liste des niveaux du défi */
+        .challenge-levels {
+            list-style: none;
+            padding: 0;
+        }
+
+        .challenge-levels li {
+            background: var(--surface);
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .challenge-levels strong {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .two-col {
+                flex-direction: column;
+            }
+
+            .project-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <header class="app-bar">
+        <div class="container app-bar-inner">
+            <label class="toggle" title="Basculer le thème">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider">
+                    <img src="images/icons/dark_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode sombre"
+                        class="icon moon">
+                    <img src="images/icons/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode clair"
+                        class="icon sun">
+                </span>
+            </label>
+            <nav class="nav-links">
+                <a href="index.html" class="ripple">Accueil</a>
+                <a href="index.html#projects" class="ripple">Mes projets</a>
+                <a href="#contact" class="ripple">Contact</a>
+            </nav>
+            <a href="images/CV Maxence Coste.pdf" target="_blank" rel="noopener noreferrer" class="btn-download ripple">
+                <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Télécharger"
+                    class="icon-download">
+                Télécharger mon CV
+            </a>
+        </div>
+    </header>
+
+    <div class="side-menu hidden">
+        <!-- Gélule 1 : thème -->
+        <div class="pill">
+            <label class="toggle" title="Basculer le thème">
+                <input type="checkbox" id="dark-mode-toggle-side">
+                <span class="slider">
+                    <img src="images/icons/dark_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode sombre"
+                        class="icon moon">
+                    <img src="images/icons/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode clair"
+                        class="icon sun">
+                </span>
+            </label>
+        </div>
+        <!-- Gélule 2 : navigation -->
+        <div class="pill nav-pill">
+            <a href="index.html" class="tooltip" data-label="Accueil">
+                <img src="images/icons/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Accueil">
+            </a>
+            <a href="index.html#about" class="tooltip" data-label="À propos">
+                <img src="images/icons/info_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="À propos">
+            </a>
+            <a href="index.html#projects" class="tooltip" data-label="Mes projets">
+                <img src="images/icons/folder_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mes projets">
+            </a>
+            <a href="#contact" class="tooltip" data-label="Contact">
+                <img src="images/icons/person_book_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Contact">
+            </a>
+        </div>
+        <!-- Gélule 3 : CV -->
+        <div class="pill">
+            <a href="images/CV Maxence Coste.pdf" target="_blank" class="tooltip" data-label="Télécharger CV">
+                <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Télécharger le CV">
+            </a>
+        </div>
+    </div>
+
+    <a href="#top" id="back-to-top" class="btn-back-to-top" title="Haut de page">
+        <img src="images/icons/arrow_upward_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Haut de page">
+    </a>
+
+    <section class="project-hero container">
+        <div style="margin-bottom: 1rem;">
+            <span
+                style="background: var(--primary-container); color: var(--primary); padding: 0.5rem 1rem; border-radius: 99px; font-weight: bold; font-size: 0.9rem;">Hackathon
+                / Nuit de l'Info</span>
+        </div>
+        <h1>Decathlon Profiler</h1>
+        <div class="subtitle">Conception et développement d'un outil de profilage sportif en moins de 2h.
+        </div>
+
+        <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--on-surface);">
+            Ce projet a été réalisé lors de la Nuit de l'Info, un défi national étudiant de développement web du coucher
+            au lever du soleil.
+            <br>
+            <a href="https://github.com/OM2GA/decathlon_nuit_de_l_info.git" target="_blank"
+                style="color: var(--primary); font-weight: bold; text-decoration: underline; margin-top: 10px; display: inline-block;">
+                Voir le code sur GitHub
+            </a>
+        </p>
+
+        <div class="project-meta">
+            <div class="meta-item">
+                <h4>Mon Rôle</h4>
+                <p>Développeur Unique & Designer UI</p>
+            </div>
+            <div class="meta-item">
+                <h4>L'Équipe</h4>
+                <p>1 Développeur (Moi), 1 Chef de projet, 2 Créateurs de contenu</p>
+            </div>
+            <div class="meta-item">
+                <h4>Stack Technique</h4>
+                <p>HTML5, CSS3, JS Vanilla, Bootstrap 5</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container">
+        <div class="two-col">
+            <div class="col-content">
+                <h2>Le Défi : CTO de votre Santé</h2>
+                <p>Le sujet de cette édition nous invitait à <strong>connecter l'informatique au sport pour prévenir les
+                        blessures</strong>.</p>
+                <p>L'objectif était de créer une interface permettant aux utilisateurs d'analyser leur pratique et
+                    d'obtenir des conseils posturaux adaptés. En tant que seul développeur de l'équipe, j'avais la
+                    charge de transformer les idées et contenus de mes camarades en un produit fonctionnel avant l'aube.
+                </p>
+
+                <h3>Objectifs atteints (Niveaux)</h3>
+                <ul class="challenge-levels">
+                    <li><strong>Niveau 1 : Profilage Sportif</strong><br>Mise en place d'un algorithme de QCM pour
+                        déterminer le profil (A, B, C, D).</li>
+                    <li><strong>Niveau 2 : Instructions Personnalisées</strong><br>Génération dynamique de conseils
+                        basés sur le résultat du test.</li>
+                    <li><strong>Niveau 3 : Visualisation</strong><br>Intégration de schémas visuels pour illustrer les
+                        bonnes postures.</li>
+                </ul>
+            </div>
+            <div class="col-visual">
+                <img src="images/decathlon_questionnaire.png" alt="Interface du Questionnaire Decathlon"
+                    style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-bottom: 1rem;">
+                <div style="text-align: center; font-size: 0.9rem; opacity: 0.7;">
+                    Interface du questionnaire interactif
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container">
+        <h2>Design & Expérience Utilisateur</h2>
+        <p>L'enjeu n'était pas seulement technique, mais aussi visuel. Il fallait respecter l'identité forte de
+            <strong>Decathlon</strong> tout en guidant l'utilisateur de manière fluide.
+        </p>
+
+        <div class="two-col">
+            <div class="col-visual">
+                <img src="images/decathlon_accueil.png" alt="Page d'accueil Decathlon Profiler"
+                    style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+            </div>
+            <div class="col-content">
+                <h3>Identité Visuelle</h3>
+                <p>J'ai intégré les codes graphiques de la marque (le bleu iconique, la typographie <em>Roboto
+                        Condensed</em>) pour créer une expérience immersive. L'utilisation de <strong>Bootstrap
+                        5</strong> m'a permis de construire une grille responsive solide en un temps record.</p>
+
+                <h3>Une UX sans friction</h3>
+                <p>Le questionnaire a été conçu comme une "Single Page Application" simulée : les questions défilent
+                    sans rechargement de page pour garder l'utilisateur engagé, avant de le rediriger vers ses résultats
+                    personnalisés.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container"
+        style="background: var(--surface-container); border-radius: 24px; padding: 3rem;">
+        <h2>Architecture & Code</h2>
+        <p>Contrainte de temps oblige, j'ai opté pour une architecture <strong>100% statique</strong> (pas de base de
+            données). Tout le "cerveau" de l'application réside dans le navigateur client via JavaScript.</p>
+
+        <div class="two-col">
+            <div class="col-content">
+                <h3>Logique de Profilage (JS)</h3>
+                <p>Plutôt que d'envoyer les réponses à un serveur, j'ai développé un algorithme en JS Vanilla qui stocke
+                    les points (A, B, C, D) en mémoire.</p>
+                <p>À la fin du quiz, le script calcule le profil dominant et génère une redirection avec ancre (ex:
+                    <code>conseils.html#profil-c</code>). La page de destination lit cette ancre pour n'afficher que le
+                    contenu pertinent pour l'utilisateur.
+                </p>
+                <p>Cette approche "Low-Tech" garantit un site ultra-rapide et hébergeable n'importe où.</p>
+            </div>
+            <div class="col-visual">
+                <div class="code-block">
+                    // Exemple simplifié de la logique de résultat
+                    function showResult() {
+                    // Calcul du profil majoritaire
+                    let maxScore = 0;
+                    let finalProfile = '';
+
+                    for (const [profile, score] of Object.entries(scores)) {
+                    if (score > maxScore) {
+                    maxScore = score;
+                    finalProfile = profile;
+                    }
+                    }
+
+                    // Redirection vers la page conseils avec ancre
+                    // L'ancre #profil-X permet d'activer le CSS :target
+                    window.location.href =
+                    `conseils.html#profil-${finalProfile}`;
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container">
+        <h2>Bilan de la Nuit</h2>
+        <div class="two-col">
+            <div class="col-content">
+                <p>Ce projet a été une excellente épreuve de gestion du stress et de priorisation. En tant que seul
+                    développeur pour trois créatifs, j'ai dû :</p>
+                <ul>
+                    <li><strong>Trancher rapidement</strong> sur les choix techniques (Pas de React/Vue, rester sur du
+                        JS pur pour aller vite).</li>
+                    <li><strong>Coordonner</strong> l'intégration des assets (textes et images) produits en temps réel
+                        par l'équipe.</li>
+                    <li><strong>Livrer</strong> un produit fini et sans bug critique avant la deadline.</li>
+                </ul>
+            </div>
+            <div class="col-visual">
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <div class="stat-card">
+                        <div class="stat-score">2h</div>
+                        <div class="stat-label">Durée Dev</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-score">4</div>
+                        <div class="stat-label">Niveaux Validés</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-score">100%</div>
+                        <div class="stat-label">Autonomie Tech</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container" style="text-align: center; padding-bottom: 6rem;">
+        <a href="index.html#projects" class="btn-download ripple" style="text-decoration: none;">
+            ← Retour aux projets
+        </a>
+    </section>
+
+    <footer id="contact" class="footer container">
+        <h2>Contact</h2>
+        <p>Intéressé par mon profil ? Discutons-en.</p>
+        <div class="btn-contact ripple">
+            <span class="default-text">Me contacter</span>
+            <span class="hover-content">maxence.coste.mc@gmail.com
+                <img src="images/icons/content_copy.svg" alt="Copier" class="icon-copy" title="Copier l'email">
+            </span>
+        </div>
+        <hr class="footer-separator">
+        <div class="footer-bottom">
+            <p>© 2025 Maxence Coste — Tous droits réservés</p>
+            <a href="https://www.linkedin.com/in/maxence-c-62aaa0264/" target="_blank" class="footer-link ripple">
+                <img src="images/icons/linkedin.svg" alt="LinkedIn"> LinkedIn
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

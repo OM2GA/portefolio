@@ -82,67 +82,115 @@
   </a>
 
   <!-- === CONTENU === -->
-  <section id="about" class="hero container">
-    <div class="about-content">
-      <div class="about-text">
-        <h1>À propos</h1>
+  <section id="about" class="about-section container">
+    <!-- Hero Card : Introduction -->
+    <div class="about-hero-card">
+      <div class="about-hero-content">
+        <div class="about-hero-text">
+          <h1>Maxence Coste</h1>
+          <p class="about-tagline">Étudiant en MMI · Passionné d'UX/UI Design</p>
+          <p class="about-intro">Actuellement en deuxième année de <strong>BUT Métiers du Multimédia et de
+              l'Internet</strong>
+            à l'Université Gustave Eiffel à Meaux, je m'oriente vers l'UX/UI design. Mon objectif est de m'impliquer
+            à 100 % dans des projets visuels et interactifs.</p>
+        </div>
+        <img src="images/pp_maxence.jpg" alt="Maxence Coste" class="about-hero-photo">
+      </div>
+    </div>
 
-        <p>Actuellement en deuxième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'Université Gustave
-          Eiffel à Meaux, je m'oriente vers l'UX/UI design.</p>
-
-        <p>Mon objectif est de m'impliquer à 100 % dans des projets visuels et interactifs. Curieux et polyvalent,
-          j'aime
-          explorer la frontière entre le design et la technique.</p>
-
-        <h3 class="hero-skills-title">Mon parcours & Mes compétences</h3>
-
-        <p>J'ai récemment affiné mon expertise lors d'un stage en tant qu'Assistant UX Designer à la Société Générale.
-          Cette expérience m'a permis de travailler au cœur d'une équipe pluridisciplinaire (UX/UI, IT, métiers
-          financiers). J'y ai notamment contribué à la conception de supports explicatifs vidéo et à l'adaptation de
-          maquettes sur Figma, tout en analysant les besoins réels des utilisateurs.</p>
-
-        <p>Au-delà du design d'interface et du prototypage (Figma), je possède des compétences techniques en
-          développement
-          web (HTML, CSS, Bootstrap, JS/PHP) qui me permettent de mieux comprendre les contraintes d'intégration.</p>
-
-        <p>Pour ce qui est de ma personnalité, je n'ai aucune difficulté à m'intégrer dans un groupe et à collaborer,
-          que
-          ce soit dans le cadre professionnel ou personnel. Je suis passionné de technologie, mais également de sport,
-          je
-          suis effectivement un grand fan de football (supporter du PSG) et je pratique la course à pieds où j'ai des
-          objectifs ambitieux.</p>
-
-        <p>Je suis aujourd'hui prêt à relever de nouveaux défis pour continuer à progresser et acquérir de l'expérience.
-        </p>
+    <!-- Grid des cartes thématiques -->
+    <div class="about-cards-grid">
+      <!-- Carte Expérience -->
+      <div class="about-card about-card-experience">
+        <div class="about-card-header">
+          <span class="about-card-icon">💼</span>
+          <h3>Mon Expérience</h3>
+        </div>
+        <div class="about-card-content">
+          <div class="experience-item">
+            <span class="experience-role">Assistant UX Designer</span>
+            <span class="experience-company">Société Générale</span>
+          </div>
+          <p>J'ai travaillé au cœur d'une équipe pluridisciplinaire (UX/UI, IT, métiers financiers).
+            J'ai contribué à la <strong>conception de supports explicatifs vidéo</strong> et à
+            l'<strong>adaptation de maquettes sur Figma</strong>, tout en analysant les besoins réels des utilisateurs.
+          </p>
+        </div>
       </div>
 
-      <div class="about-visuals">
-        <img src="images/pp_maxence.jpg" alt="Maxence Coste" class="profile-photo">
-        <div class="skills-logos">
-          <div class="skill-chip" title="HTML">
-            <img src="images/logos/html.png" alt="HTML">
-            <span>HTML</span>
+      <!-- Carte Compétences -->
+      <div class="about-card about-card-skills">
+        <div class="about-card-header">
+          <span class="about-card-icon">🛠️</span>
+          <h3>Mes Compétences</h3>
+        </div>
+        <div class="about-card-content">
+          <p>Curieux et polyvalent, j'aime explorer la frontière entre le design et la technique.</p>
+          <div class="skills-categories">
+            <div class="skill-category">
+              <span class="skill-category-label">Design</span>
+              <div class="skills-chips">
+                <div class="skill-chip" title="Figma">
+                  <img src="images/logos/figma.svg" alt="Figma">
+                  <span>Figma</span>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category">
+              <span class="skill-category-label">Développement</span>
+              <div class="skills-chips">
+                <div class="skill-chip" title="HTML">
+                  <img src="images/logos/html.png" alt="HTML">
+                  <span>HTML</span>
+                </div>
+                <div class="skill-chip" title="CSS">
+                  <img src="images/logos/css.png" alt="CSS">
+                  <span>CSS</span>
+                </div>
+                <div class="skill-chip" title="JavaScript">
+                  <img src="images/logos/js.png" alt="JavaScript">
+                  <span>JS</span>
+                </div>
+                <div class="skill-chip" title="PHP">
+                  <img src="images/logos/php.svg" alt="PHP">
+                  <span>PHP</span>
+                </div>
+                <div class="skill-chip" title="Bootstrap">
+                  <img src="images/logos/bootstrap.png" alt="Bootstrap">
+                  <span>Bootstrap</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="skill-chip" title="CSS">
-            <img src="images/logos/css.png" alt="CSS">
-            <span>CSS</span>
+        </div>
+      </div>
+
+      <!-- Carte Personnalité -->
+      <div class="about-card about-card-personality">
+        <div class="about-card-header">
+          <span class="about-card-icon">⚡</span>
+          <h3>Ma Personnalité</h3>
+        </div>
+        <div class="about-card-content">
+          <p>Je n'ai aucune difficulté à m'intégrer dans un groupe et à collaborer, que ce soit dans le
+            cadre professionnel ou personnel.</p>
+          <div class="personality-interests">
+            <span class="interest-tag">🖥️ Tech Enthusiast</span>
+            <span class="interest-tag">⚽ Football (PSG)</span>
+            <span class="interest-tag">🏃 Course à pied</span>
           </div>
-          <div class="skill-chip" title="JavaScript">
-            <img src="images/logos/js.png" alt="JavaScript">
-            <span>JS</span>
-          </div>
-          <div class="skill-chip" title="PHP">
-            <img src="images/logos/php.svg" alt="PHP">
-            <span>PHP</span>
-          </div>
-          <div class="skill-chip" title="Bootstrap">
-            <img src="images/logos/bootstrap.png" alt="Bootstrap">
-            <span>Bootstrap</span>
-          </div>
-          <div class="skill-chip" title="Figma">
-            <img src="images/logos/figma.svg" alt="Figma">
-            <span>Figma</span>
-          </div>
+        </div>
+      </div>
+
+      <!-- Carte Objectif -->
+      <div class="about-card about-card-goal">
+        <div class="about-card-header">
+          <span class="about-card-icon">🎯</span>
+          <h3>Mon Objectif</h3>
+        </div>
+        <div class="about-card-content">
+          <p class="goal-statement">Je suis aujourd'hui prêt à relever de <strong>nouveaux défis</strong>
+            pour continuer à progresser et acquérir de l'expérience.</p>
         </div>
       </div>
     </div>

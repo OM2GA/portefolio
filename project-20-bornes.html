@@ -11,7 +11,6 @@
         rel="stylesheet">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <style>
-        /* Specific styles for project details */
         .project-hero {
             padding: 8rem 0 4rem;
             text-align: center;
@@ -27,6 +26,9 @@
             font-size: 1.5rem;
             opacity: 0.8;
             margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .project-meta {
@@ -64,6 +66,11 @@
             color: var(--on-surface);
         }
 
+        .project-section h3 {
+            color: var(--primary);
+            margin-top: 2rem;
+        }
+
         .project-section p {
             font-size: 1.1rem;
             line-height: 1.6;
@@ -87,22 +94,32 @@
             flex: 1;
         }
 
+        /* Styles pour les placeholders d'images (à remplacer par tes screenshots) */
         .visual-placeholder {
-            background-color: #ccc;
+            background-color: var(--surface-container);
             width: 100%;
-            height: 300px;
+            min-height: 300px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             border-radius: 16px;
-            color: #555;
+            color: var(--on-surface);
             font-weight: bold;
             margin-bottom: 1rem;
-            border: 1px dashed #999;
+            border: 2px dashed var(--outline);
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .visual-placeholder:hover {
+            border-color: var(--primary);
+            background-color: var(--surface);
         }
 
         .visual-placeholder.tall {
-            height: 500px;
+            min-height: 500px;
         }
 
         .code-block {
@@ -110,9 +127,27 @@
             color: #eaddff;
             padding: 1.5rem;
             border-radius: 12px;
-            font-family: monospace;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
             overflow-x: auto;
             margin: 1rem 0;
+            border: 1px solid var(--outline);
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-card {
+            background: var(--primary-container);
+            color: var(--on-primary-container);
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .stat-score {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
         }
 
         @media (max-width: 768px) {
@@ -123,16 +158,11 @@
             .project-hero h1 {
                 font-size: 2.2rem;
             }
-
-            .visual-placeholder {
-                height: 200px;
-            }
         }
     </style>
 </head>
 
 <body>
-    <!-- === NAVBAR PRINCIPALE === -->
     <header class="app-bar">
         <div class="container app-bar-inner">
             <label class="toggle" title="Basculer le thème">
@@ -146,208 +176,182 @@
             </label>
             <nav class="nav-links">
                 <a href="index.html" class="ripple">Accueil</a>
-                <a href="index.html#about" class="ripple">À propos</a>
                 <a href="index.html#projects" class="ripple">Mes projets</a>
                 <a href="index.html#contact" class="ripple">Contact</a>
             </nav>
-            <a href="images/CV Maxence Coste.pdf" target="_blank" rel="noopener noreferrer" class="btn-download ripple">
-                <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Télécharger"
-                    class="icon-download">
-                Télécharger mon CV
+            <a href="images/CV Maxence Coste.pdf" target="_blank" class="btn-download ripple">
+                <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon"
+                    class="icon-download"> CV
             </a>
         </div>
     </header>
 
-    <!-- === MENU LATÉRAL (affiché au scroll) === -->
-    <div class="side-menu hidden">
-        <!-- Gélule 1 : thème -->
-        <div class="pill">
-            <label class="toggle" title="Basculer le thème">
-                <input type="checkbox" id="dark-mode-toggle-side">
-                <span class="slider">
-                    <img src="images/icons/dark_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode sombre"
-                        class="icon moon">
-                    <img src="images/icons/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode clair"
-                        class="icon sun">
-                </span>
-            </label>
-        </div>
-        <!-- Gélule 2 : navigation -->
-        <div class="pill nav-pill">
-            <a href="index.html" class="tooltip" data-label="Accueil">
-                <img src="images/icons/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Accueil">
-            </a>
-            <a href="index.html#about" class="tooltip" data-label="À propos">
-                <img src="images/icons/info_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="À propos">
-            </a>
-            <a href="index.html#projects" class="tooltip" data-label="Mes projets">
-                <img src="images/icons/folder_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mes projets">
-            </a>
-            <a href="index.html#contact" class="tooltip" data-label="Contact">
-                <img src="images/icons/person_book_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Contact">
-            </a>
-        </div>
-        <!-- Gélule 3 : CV -->
-        <div class="pill">
-            <a href="images/CV Maxence Coste.pdf" target="_blank" class="tooltip" data-label="Télécharger CV">
-                <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Télécharger le CV">
-            </a>
-        </div>
-    </div>
-
-    <!-- === PROJECT HERO === -->
     <section class="project-hero container">
-        <h1>Refonte du portail web "Les 20 Bornes d'Andrésy"</h1>
-        <div class="subtitle">Modernisation de l'expérience utilisateur et intégration responsive pour un événement
-            sportif local.</div>
+        <div style="margin-bottom: 1rem;">
+            <span
+                style="background: var(--primary-container); color: var(--primary); padding: 0.5rem 1rem; border-radius: 99px; font-weight: bold; font-size: 0.9rem;">Projet
+                Personnel</span>
+        </div>
+        <h1>Les 20 Bornes d'Andrésy</h1>
+        <div class="subtitle">Refonte complète et modernisation du portail web d'un événement sportif local majeur.
+        </div>
 
         <div class="project-meta">
             <div class="meta-item">
                 <h4>Rôle</h4>
-                <p>Designer UI & Intégrateur Front-End</p>
+                <p>Designer UI & Développeur Front-End</p>
             </div>
             <div class="meta-item">
-                <h4>Outils</h4>
-                <p>HTML5, CSS3, JS (Vanilla), Bootstrap 5, Figma</p>
+                <h4>Stack Technique</h4>
+                <p>Bootstrap 5.3, HTML5, CSS3, JS Vanilla</p>
+            </div>
+            <div class="meta-item">
+                <h4>Performance</h4>
+                <p>Score SEO : 100/100</p>
             </div>
         </div>
     </section>
 
-    <!-- === CONTEXTE === -->
     <section class="project-section container">
-        <h2>Le Contexte</h2>
         <div class="two-col">
             <div class="col-content">
-                <p>L'objectif était de créer une interface dynamique et informative pour la 43ème édition des 20 Bornes
-                    d'Andrésy. Le site devait capter l'énergie de l'événement tout en permettant aux utilisateurs de
-                    s'inscrire rapidement et de trouver les informations techniques (parcours, horaires, règlement) sans
-                    friction, quel que soit leur appareil (mobile ou desktop).</p>
+                <h2>Le Défi</h2>
+                <p>Ce projet est né d'un constat simple : le site actuel de l'événement des "20 Bornes" accusait le
+                    poids des années. Il n'était pas responsive (illisible sur mobile), souffrait de problèmes de
+                    chargement CSS et renvoyait une image vieillissante qui ne correspondait plus au dynamisme de la
+                    course.</p>
+                <p><strong>Mon objectif :</strong> Créer une refonte moderne et performante pour m'entraîner, avec
+                    l'ambition de présenter cette maquette fonctionnelle à la mairie d'Andrésy pour remplacer la version
+                    actuelle.</p>
             </div>
             <div class="col-visual">
-                <div class="visual-placeholder"
-                    style="background-image: linear-gradient(135deg, #eee 25%, transparent 25%), linear-gradient(225deg, #eee 25%, transparent 25%), linear-gradient(45deg, #eee 25%, transparent 25%), linear-gradient(315deg, #eee 25%, transparent 25%); background-position: 10px 0, 10px 0, 0 0, 0 0; background-size: 20px 20px; background-repeat: repeat;">
-                    Mockup Global du projet</div>
+                <img src="images/mockup_pc_mobile.png" alt="Mockup comparatif Mobile vs Desktop"
+                    style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
             </div>
         </div>
     </section>
 
-    <!-- === UX/UI DESIGN === -->
     <section class="project-section container">
-        <h2>Design UX/UI</h2>
+        <h2>Choix Graphiques & UX</h2>
+        <p>Pour assurer une transition douce pour les habitués, j'ai conservé les codes couleurs de l'affiche officielle
+            (Sarcelle, Orange, Magenta). Cependant, j'ai voulu rompre avec le côté statique des sites institutionnels
+            classiques.</p>
 
         <div class="two-col">
             <div class="col-visual">
-                <div class="visual-placeholder tall">Mockups Multi-device (iPhone, Tablette, Desktop)</div>
+                <img src="images/accueil_20bornes.png" alt="Aperçu de la page d'accueil avec formes organiques"
+                    style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
             </div>
             <div class="col-content">
-                <h3>Identité Visuelle & Émotion</h3>
-                <p>J'ai opté pour une palette de couleurs vibrantes (Magenta, Orange, Sarcelle) pour refléter le
-                    dynamisme du running et l'aspect festif. L'utilisation de formes organiques animées (morphing blobs
-                    en CSS) en arrière-plan brise la rigidité de la grille pour apporter du mouvement.</p>
+                <h3>Dynamisme visuel</h3>
+                <p>J'ai intégré des formes organiques ("blobs") en arrière-plan pour apporter un côté fun et vivant.
+                    L'idée est de refléter l'énergie d'une course à pied populaire, plutôt que de présenter un simple
+                    tableau d'inscription.</p>
 
-                <h3>Hiérarchie de l'information</h3>
-                <p>L'information cruciale est segmentée. Les 3 distances (21km, 10km, 5km) sont présentées sous forme de
-                    cartes distinctes avec des codes couleurs propres pour faciliter la prise de décision rapide de
-                    l'utilisateur.</p>
-
-                <h3>Call-to-Action (CTA)</h3>
-                <p>Le bouton 'S'inscrire' est placé stratégiquement dans la zone de flottaison (Hero Section) et se
-                    distingue par un fort contraste pour maximiser le taux de conversion.</p>
-
-                <h3>Accessibilité & Lisibilité</h3>
-                <p>Choix des typographies Montserrat (Titres) pour l'impact et Roboto (Corps) pour la lisibilité
-                    optimale des textes longs.</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 3rem;">
-            <h3>Focus sur les composants</h3>
-            <div class="two-col">
-                <div class="col-visual">
-                    <div class="visual-placeholder">Zoom sur les cartes (Normal vs Hover)</div>
-                </div>
-                <div class="col-visual">
-                    <div class="visual-placeholder">Zoom sur la Navbar mobile ouverte</div>
-                </div>
+                <h3>L'expérience utilisateur (UX)</h3>
+                <p>J'ai réorganisé l'information pour qu'elle soit accessible en moins de 3 clics. La distinction des
+                    épreuves par couleur permet à l'utilisateur d'identifier immédiatement sa course (10km, 5km ou
+                    Semi).</p>
             </div>
         </div>
     </section>
 
-    <!-- === INTEGRATION WEB === -->
     <section class="project-section container"
         style="background: var(--surface-container); border-radius: 24px; padding: 3rem;">
         <h2>Développement & Intégration</h2>
-
-        <h3>Maîtrise du Framework & Customisation</h3>
-        <p>J'ai utilisé Bootstrap 5.3 pour assurer une grille responsive robuste, mais j'ai surchargé le design
-            (overriding) via un fichier style.css dédié et l'usage de variables CSS (:root) pour ne pas ressembler à un
-            site Bootstrap standard.</p>
+        <p>J'ai choisi <strong>Bootstrap 5.3</strong> pour sa fiabilité et pour accélérer le développement de la grille
+            responsive. Cependant, je ne voulais pas d'un site "standard". J'ai donc développé une couche CSS
+            personnalisée conséquente.</p>
 
         <div class="two-col">
             <div class="col-content">
-                <h3>CSS Moderne & Animations</h3>
-                <p>Intégration d'animations CSS avancées (@keyframes pour le morphing des formes et les effets de
-                    pulsation) pour enrichir l'interface sans alourdir le chargement avec des librairies externes.
-                    Utilisation de backdrop-filter et de dégradés pour des effets de profondeur modernes.</p>
-
-                <h3>JavaScript & Performance</h3>
-                <p>J'ai développé un script 'Back to Top' natif sans jQuery. J'ai optimisé l'animation de défilement en
-                    utilisant requestAnimationFrame plutôt qu'un simple setInterval pour garantir une fluidité parfaite
-                    (60fps), notamment sur mobile où les ressources sont limitées.</p>
-
-                <h3>Responsive Design</h3>
-                <p>Approche Mobile-First. Le menu de navigation se transforme en menu burger sur mobile avec une
-                    animation soignée, et les cartes s'empilent naturellement grâce aux classes de grille Bootstrap
-                    (col-md-6, col-lg-4).</p>
+                <h3>Focus : La Navbar</h3>
+                <p>C'est un élément que j'apprécie particulièrement sur ce projet. Bien que simple en apparence, j'ai
+                    travaillé les effets de survol (hover) et l'espacement pour lui donner un aspect "mignon" et
+                    accueillant, qui invite à la navigation.</p>
+                <p>Le code reste propre et sémantique, assurant une bonne accessibilité.</p>
             </div>
             <div class="col-visual">
                 <div class="code-block">
-                    // Exemple d'optimisation JS
-                    function smoothScroll(target, duration) {
-                    var target = document.querySelector(target);
-                    var targetPosition = target.getBoundingClientRect().top;
-                    var startPosition = window.pageYOffset;
-                    var startTime = null;
-
-                    function animation(currentTime) {
-                    if (startTime === null) startTime = currentTime;
-                    var timeElapsed = currentTime - startTime;
-                    var run = ease(timeElapsed, startPosition, targetPosition, duration);
-                    window.scrollTo(0, run);
-                    if (timeElapsed < duration) requestAnimationFrame(animation); } requestAnimationFrame(animation); }
+                    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+                        <div class="container">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="images/logo.webp" alt="Logo 20 Bornes">
+                            </a>
+                            <ul class="navbar-nav gap-3">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="index.html">Accueil</a>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="visual-placeholder" style="height: 150px; margin-top: 1rem;">Extrait CSS keyframes
-                        </div>
+                    </nav>
                 </div>
             </div>
+        </div>
     </section>
 
-    <!-- === CONCLUSION === -->
+    <section class="project-section container">
+        <h2>Performance & SEO</h2>
+        <div class="two-col">
+            <div class="col-content">
+                <p>Un site lent fait fuir les utilisateurs. J'ai donc optimisé chaque ressource :</p>
+                <ul>
+                    <li><strong>Format WebP :</strong> Toutes les images ont été converties pour réduire leur poids sans
+                        perte de qualité visible.</li>
+                    <li><strong>Code minifié :</strong> Utilisation des bonnes pratiques Bootstrap.</li>
+                    <li><strong>SEO technique :</strong> Balisage sémantique rigoureux (header, nav, main, article).
+                    </li>
+                </ul>
+                <p>Le résultat est sans appel sur <em>Google PageSpeed Insights</em> :</p>
+            </div>
+            <div class="col-visual">
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <div class="stat-card">
+                        <div class="stat-score">100</div>
+                        <div>SEO</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-score">99</div>
+                        <div>Performance</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-score">100</div>
+                        <div>Bonnes Pratiques</div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">
+                    Scores obtenus sur Desktop via PageSpeed Insights
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="project-section container" style="text-align: center; padding-bottom: 6rem;">
-        <h2>Le mot de la fin</h2>
-        <p style="max-width: 800px; margin: 0 auto;">Ce projet m'a permis de consolider mes compétences en intégration
-            responsive et en manipulation du DOM, tout en portant une attention particulière aux détails graphiques qui
-            améliorent l'expérience utilisateur finale.</p>
+        <h2>Et la suite ?</h2>
+        <p style="max-width: 800px; margin: 0 auto 2rem;">Le projet est fonctionnel et prêt à être présenté. Pour une
+            version "v2", j'envisage de remplacer les formes abstraites par des photos réelles des éditions précédentes,
+            ce qui est une norme appréciée dans le milieu de la course à pied. J'attends avec impatience les retours de
+            la mairie pour pousser le projet encore plus loin.</p>
+
+        <a href="index.html#projects" class="btn-download ripple" style="text-decoration: none;">
+            ← Retour aux projets
+        </a>
     </section>
 
-    <!-- === FOOTER === -->
     <footer id="contact" class="footer container">
         <h2>Contact</h2>
-        <p>Je suis prêt à collaborer sur de nouveaux projets.</p>
+        <p>Intéressé par mon profil ? Discutons-en.</p>
         <div class="btn-contact ripple">
             <span class="default-text">Me contacter</span>
             <span class="hover-content">maxence.coste.mc@gmail.com
                 <img src="images/icons/content_copy.svg" alt="Copier" class="icon-copy" title="Copier l'email">
             </span>
         </div>
-
         <hr class="footer-separator">
-
         <div class="footer-bottom">
             <p>© 2025 Maxence Coste — Tous droits réservés</p>
             <a href="https://www.linkedin.com/in/maxence-c-62aaa0264/" target="_blank" class="footer-link ripple">
-                <img src="images/icons/linkedin.svg" alt="LinkedIn">
-                Je suis sur LinkedIn
+                <img src="images/icons/linkedin.svg" alt="LinkedIn"> LinkedIn
             </a>
         </div>
     </footer>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oishi - Portfolio - Maxence Coste</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        /* Styles spécifiques à la page projet (identique à Decathlon) */
+        .project-hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .project-hero .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .meta-item {
+            background: var(--surface-container);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--outline);
+        }
+
+        .meta-item h4 {
+            margin: 0 0 0.5rem;
+            color: var(--primary);
+        }
+
+        .meta-item p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .project-section {
+            padding: 4rem 0;
+        }
+
+        .project-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--on-surface);
+        }
+
+        .project-section h3 {
+            color: var(--primary);
+            margin-top: 2rem;
+        }
+
+        .project-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: var(--on-surface);
+            opacity: 0.9;
+        }
+
+        .two-col {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            margin-top: 2rem;
+        }
+
+        .col-content {
+            flex: 1;
+        }
+
+        .col-visual {
+            flex: 1;
+        }
+
+        .code-block {
+            background: #2b2930;
+            color: #eaddff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid var(--outline);
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-card {
+            background: var(--primary-container);
+            color: var(--on-primary-container);
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 1rem;
+            min-width: 120px;
+        }
+
+        .stat-score {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Liste des niveaux du défi */
+        .challenge-levels {
+            list-style: none;
+            padding: 0;
+        }
+
+        .challenge-levels li {
+            background: var(--surface);
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .challenge-levels strong {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .two-col {
+                flex-direction: column;
+            }
+
+            .project-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <header class="app-bar">
+        <div class="container app-bar-inner">
+            <label class="toggle" title="Basculer le thème">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider">
+                    <img src="images/icons/dark_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode sombre"
+                        class="icon moon">
+                    <img src="images/icons/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode clair"
+                        class="icon sun">
+                </span>
+            </label>
+            <nav class="nav-links">
+                <a href="index.html" class="ripple">Accueil</a>
+                <a href="index.html#projects" class="ripple">Mes projets</a>
+                <a href="#contact" class="ripple">Contact</a>
+            </nav>
+            <a href="images/CV Maxence Coste.pdf" target="_blank" rel="noopener noreferrer" class="btn-download ripple">
+                <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Télécharger"
+                    class="icon-download">
+                Télécharger mon CV
+            </a>
+        </div>
+    </header>
+
+    <div class="side-menu hidden">
+        <div class="pill">
+            <label class="toggle" title="Basculer le thème">
+                <input type="checkbox" id="dark-mode-toggle-side">
+                <span class="slider">
+                    <img src="images/icons/dark_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode sombre"
+                        class="icon moon">
+                    <img src="images/icons/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode clair"
+                        class="icon sun">
+                </span>
+            </label>
+        </div>
+        <div class="pill nav-pill">
+            <a href="index.html" class="tooltip" data-label="Accueil">
+                <img src="images/icons/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Accueil">
+            </a>
+            <a href="index.html#about" class="tooltip" data-label="À propos">
+                <img src="images/icons/info_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="À propos">
+            </a>
+            <a href="index.html#projects" class="tooltip" data-label="Mes projets">
+                <img src="images/icons/folder_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mes projets">
+            </a>
+            <a href="#contact" class="tooltip" data-label="Contact">
+                <img src="images/icons/person_book_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Contact">
+            </a>
+        </div>
+        <div class="pill">
+            <a href="images/CV Maxence Coste.pdf" target="_blank" class="tooltip" data-label="Télécharger CV">
+                <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Télécharger le CV">
+            </a>
+        </div>
+    </div>
+
+    <a href="#top" id="back-to-top" class="btn-back-to-top" title="Haut de page">
+        <img src="images/icons/arrow_upward_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Haut de page">
+    </a>
+
+    <section class="project-hero container">
+        <div style="margin-bottom: 1rem;">
+            <span
+                style="background: var(--primary-container); color: var(--primary); padding: 0.5rem 1rem; border-radius: 99px; font-weight: bold; font-size: 0.9rem;">
+                Projet SAE / Universitaire
+            </span>
+        </div>
+        <h1>Oishi - Sushi Shop</h1>
+        <div class="subtitle">Développement d'une plateforme e-commerce complète pour un établissement de restauration
+            rapide.</div>
+
+        <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--on-surface);">
+            Un projet ambitieux réalisé en groupe pour apprendre à connecter une interface moderne Angular à une base de
+            données SQL.
+        </p>
+
+        <div class="project-meta">
+            <div class="meta-item">
+                <h4>Mon Rôle</h4>
+                <p>Développeur Fullstack</p>
+            </div>
+            <div class="meta-item">
+                <h4>L'Équipe</h4>
+                <p>4 Étudiants</p>
+            </div>
+            <div class="meta-item">
+                <h4>Stack Technique</h4>
+                <p>Angular, PHP (API), MySQL</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container">
+        <div class="two-col">
+            <div class="col-content">
+                <h2>Le Concept</h2>
+                <p><strong>Oishi</strong> est une application web destinée à la commande en ligne de sushis et de
+                    plateaux repas. L'objectif était de simuler un environnement professionnel réel où le client peut
+                    naviguer dans un catalogue, gérer son panier et passer commande.</p>
+
+                <h3>Challenges Techniques</h3>
+                <ul class="challenge-levels">
+                    <li><strong>Architecture API</strong><br>Connecter le Frontend (Angular) au Backend via une API PHP
+                        RESTful créée sur mesure.</li>
+                    <li><strong>Apprentissage d'Angular</strong><br>Découverte et prise en main du framework
+                        (Composants, Services, Routing) en cours de développement.</li>
+                    <li><strong>Gestion des Données</strong><br>Modélisation de la base de données SQL pour gérer les
+                        utilisateurs, les produits et l'historique des commandes.</li>
+                </ul>
+            </div>
+            <div class="col-visual">
+                <img src="images/maquette_oishi.png" alt="Maquette du projet Oishi"
+                    style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-bottom: 1rem;">
+                <div style="text-align: center; font-size: 0.9rem; opacity: 0.7;">
+                    Maquette initiale du projet
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container">
+        <h2>Développement & Fonctionnalités</h2>
+        <p>Le projet est actuellement en cours de finalisation, avec un focus particulier sur l'expérience utilisateur
+            lors de l'inscription et de la commande.</p>
+
+        <div class="two-col">
+            <div class="col-visual">
+                <img src="images/connexion_oishi.png" alt="Page de connexion Oishi"
+                    style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+            </div>
+            <div class="col-content">
+                <h3>Gestion Utilisateurs (Fini)</h3>
+                <p>Les modules d'inscription et de connexion sont totalement fonctionnels. Nous avons sécurisé les
+                    formulaires et géré la persistance de la session côté client.</p>
+
+                <h3>Architecture Backend</h3>
+                <p>Pour faire communiquer notre application Angular avec la base de données, nous avons développé une
+                    API légère en PHP. C'était un point crucial du projet : comprendre comment faire transiter les
+                    données (JSON) entre le serveur et le client.</p>
+
+                <div class="code-block">
+                    <?php
+// API/boxes.php : Endpoint pour récupérer les produits
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+
+include_once 'db.php';
+
+// ... Logique de récupération SQL ...
+
+if($num > 0){
+    $boxes_arr = array();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        // Construction du JSON de réponse
+        array_push($boxes_arr["records"], $item);
+    }
+    echo json_encode($boxes_arr);
+}
+?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container"
+        style="background: var(--surface-container); border-radius: 24px; padding: 3rem;">
+        <h2>Bilan Actuel</h2>
+        <div class="two-col">
+            <div class="col-content">
+                <p>Ce projet de SAE est une excellente opportunité de monter en compétences sur des technologies très
+                    demandées (Angular). Travailler à 4 nous oblige aussi à utiliser des outils de versioning (Git) et à
+                    coordonner nos tâches.</p>
+                <p>Le principal défi reste l'intégration complète de l'API avec tous les composants du frontend, mais
+                    les briques principales (Auth, Data Fetching) sont posées.</p>
+            </div>
+            <div class="col-visual">
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <div class="stat-card">
+                        <div class="stat-score">SAE</div>
+                        <div class="stat-label">Projet Tuteuré</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-score">Angular</div>
+                        <div class="stat-label">Framework</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-score">100%</div>
+                        <div class="stat-label">API Custom</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container" style="text-align: center; padding-bottom: 6rem;">
+        <a href="index.html#projects" class="btn-download ripple" style="text-decoration: none;">
+            ← Retour aux projets
+        </a>
+    </section>
+
+    <footer id="contact" class="footer container">
+        <h2>Contact</h2>
+        <p>Intéressé par mon profil ? Discutons-en.</p>
+        <div class="btn-contact ripple">
+            <span class="default-text">Me contacter</span>
+            <span class="hover-content">maxence.coste.mc@gmail.com
+                <img src="images/icons/content_copy.svg" alt="Copier" class="icon-copy" title="Copier l'email">
+            </span>
+        </div>
+        <hr class="footer-separator">
+        <div class="footer-bottom">
+            <p>© 2025 Maxence Coste — Tous droits réservés</p>
+            <a href="https://www.linkedin.com/in/maxence-c-62aaa0264/" target="_blank" class="footer-link ripple">
+                <img src="images/icons/linkedin.svg" alt="LinkedIn"> LinkedIn
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

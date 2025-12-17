@@ -7,8 +7,8 @@ const saved = localStorage.getItem('theme');
 
 function applyTheme(theme) {
   document.body.classList.toggle('dark', theme === 'dark');
-  toggle.checked = theme === 'dark';
-  toggleSide.checked = theme === 'dark';
+  if (toggle) toggle.checked = theme === 'dark';
+  if (toggleSide) toggleSide.checked = theme === 'dark';
 }
 
 
@@ -26,19 +26,23 @@ prefersDarkQuery.addEventListener('change', e => {
 });
 
 
-toggle.addEventListener("change", () => {
-  const isDark = toggle.checked;
-  const theme = isDark ? 'dark' : 'light';
-  applyTheme(theme);
-  localStorage.setItem('theme', theme);
-});
+if (toggle) {
+  toggle.addEventListener("change", () => {
+    const isDark = toggle.checked;
+    const theme = isDark ? 'dark' : 'light';
+    applyTheme(theme);
+    localStorage.setItem('theme', theme);
+  });
+}
 
-toggleSide.addEventListener("change", () => {
-  const isDark = toggleSide.checked;
-  const theme = isDark ? 'dark' : 'light';
-  applyTheme(theme);
-  localStorage.setItem('theme', theme);
-});
+if (toggleSide) {
+  toggleSide.addEventListener("change", () => {
+    const isDark = toggleSide.checked;
+    const theme = isDark ? 'dark' : 'light';
+    applyTheme(theme);
+    localStorage.setItem('theme', theme);
+  });
+}
 
 
 document.querySelectorAll(".ripple").forEach(el => {

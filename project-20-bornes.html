@@ -179,12 +179,50 @@
                 <a href="index.html#projects" class="ripple">Mes projets</a>
                 <a href="index.html#contact" class="ripple">Contact</a>
             </nav>
-            <a href="images/CV Maxence Coste.pdf" target="_blank" class="btn-download ripple">
-                <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon"
-                    class="icon-download"> CV
+            <a href="images/CV Maxence Coste.pdf" target="_blank" rel="noopener noreferrer" class="btn-download ripple">
+                <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Télécharger"
+                    class="icon-download">
+                Télécharger mon CV
             </a>
         </div>
     </header>
+
+    <!-- === MENU LATÉRAL (affiché au scroll) === -->
+    <div class="side-menu hidden">
+        <!-- Gélule 1 : thème -->
+        <div class="pill">
+            <label class="toggle" title="Basculer le thème">
+                <input type="checkbox" id="dark-mode-toggle-side">
+                <span class="slider">
+                    <img src="images/icons/dark_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode sombre"
+                        class="icon moon">
+                    <img src="images/icons/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode clair"
+                        class="icon sun">
+                </span>
+            </label>
+        </div>
+        <!-- Gélule 2 : navigation -->
+        <div class="pill nav-pill">
+            <a href="index.html" class="tooltip" data-label="Accueil">
+                <img src="images/icons/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Accueil">
+            </a>
+            <a href="index.html#about" class="tooltip" data-label="À propos">
+                <img src="images/icons/info_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="À propos">
+            </a>
+            <a href="index.html#projects" class="tooltip" data-label="Mes projets">
+                <img src="images/icons/folder_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mes projets">
+            </a>
+            <a href="index.html#contact" class="tooltip" data-label="Contact">
+                <img src="images/icons/person_book_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Contact">
+            </a>
+        </div>
+        <!-- Gélule 3 : CV -->
+        <div class="pill">
+            <a href="images/CV Maxence Coste.pdf" target="_blank" class="tooltip" data-label="Télécharger CV">
+                <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Télécharger le CV">
+            </a>
+        </div>
+    </div>
 
     <section class="project-hero container">
         <div style="margin-bottom: 1rem;">

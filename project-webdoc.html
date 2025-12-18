@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les Coulisses de la Gym - Webdocumentaire - Maxence Coste</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body id="top">
+    <header class="app-bar">
+        <div class="container app-bar-inner">
+            <label class="toggle" title="Basculer le thème">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider">
+                    <img src="images/icons/dark_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode sombre"
+                        class="icon moon">
+                    <img src="images/icons/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode clair"
+                        class="icon sun">
+                </span>
+            </label>
+            <button class="burger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-content">
+                <nav class="nav-links">
+                    <a href="index.html" class="ripple">Accueil</a>
+                    <a href="index.html#projects" class="ripple">Mes projets</a>
+                    <a href="#contact" class="ripple">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="side-menu hidden">
+        <div class="pill">
+            <label class="toggle" title="Basculer le thème">
+                <input type="checkbox" id="dark-mode-toggle-side">
+                <span class="slider">
+                    <img src="images/icons/dark_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode sombre"
+                        class="icon moon">
+                    <img src="images/icons/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode clair"
+                        class="icon sun">
+                </span>
+            </label>
+        </div>
+        <div class="pill nav-pill">
+            <a href="index.html" class="tooltip" data-label="Accueil">
+                <img src="images/icons/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Accueil">
+            </a>
+            <a href="index.html#about" class="tooltip" data-label="À propos">
+                <img src="images/icons/info_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="À propos">
+            </a>
+            <!-- Projet parent avec sous-élément -->
+            <div class="nav-breadcrumb">
+                <a href="index.html#projects" class="tooltip breadcrumb-parent" data-label="Mes projets">
+                    <img src="images/icons/folder_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mes projets">
+                </a>
+                <div class="breadcrumb-child">
+                    <span class="breadcrumb-connector"></span>
+                    <span class="breadcrumb-current" data-label="Webdoc">DOC</span>
+                </div>
+            </div>
+            <a href="#contact" class="tooltip" data-label="Contact">
+                <img src="images/icons/person_book_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Contact">
+            </a>
+        </div>
+        <div class="pill">
+            <a href="images/CV Maxence Coste.pdf" target="_blank" class="tooltip" data-label="Télécharger CV">
+                <img src="images/icons/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Télécharger le CV">
+            </a>
+        </div>
+    </div>
+
+    <a href="#top" id="back-to-top" class="btn-back-to-top" title="Haut de page">
+        <img src="images/icons/arrow_upward_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Haut de page">
+    </a>
+
+    <section class="project-hero container">
+        <div class="project-tag-container">
+            <span class="project-tag">SAE / Web-documentaire</span>
+        </div>
+        <h1>Les Coulisses de la Gym</h1>
+        <div class="subtitle">Immersion interactive au cœur d'un club de gymnastique préparant les championnats de
+            France.</div>
+
+        <p class="project-link-note">
+            Projet réalisé en équipe dans le cadre de ma formation, visant à documenter la vie associative et sportive à
+            travers une plateforme multimédia.
+            <br>
+            <a href="https://webdoc-gymnastique.alwaysdata.net/" target="_blank" class="project-external-link">
+                Voir le site en direct
+            </a>
+        </p>
+
+        <div class="project-meta">
+            <div class="meta-item">
+                <h4>Mon Rôle</h4>
+                <p>Développeur Full-stack & Photographe / Vidéaste</p>
+            </div>
+            <div class="meta-item">
+                <h4>L'Équipe</h4>
+                <p>5 Étudiants (Rédaction, Montage, Design, Développement)</p>
+            </div>
+            <div class="meta-item">
+                <h4>Stack Technique</h4>
+                <p>HTML5, CSS3, JavaScript Vanilla</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container">
+        <div class="two-col">
+            <div class="col-content">
+                <h2>Le Défi : Raconter l'effort</h2>
+                <p>L'objectif était de créer un <strong>web-documentaire immersif</strong> présentant le club de
+                    Courtry. Il fallait harmoniser des contenus hétérogènes : vidéos, galeries photos, podcasts et
+                    articles de fond pour offrir une expérience fluide sur tous les supports.</p>
+                <p>En tant que développeur unique, j'ai transformé la vision de l'équipe en un site interactif, tout en
+                    participant activement à la captation des médias sur le terrain (photos au Reflex et vidéos au
+                    smartphone).</p>
+
+                <h3>Contributions majeures</h3>
+                <ul>
+                    <li><strong>Développement intégral</strong> : Programmation de l'interface et des interactions sans
+                        framework externe.</li>
+                    <li><strong>Captation Multimédia</strong> : Réalisation de clichés techniques et artistiques lors
+                        des entraînements.</li>
+                    <li><strong>Rédaction</strong> : Auteur de l'article de fond sur l'évolution réglementaire du
+                        justaucorps.</li>
+                </ul>
+            </div>
+            <div class="col-visual">
+                <img src="images/webdoc_accueil.png" alt="Aperçu du Webdocumentaire" class="project-img-shadow">
+                <div class="project-img-caption">Interface principale du web-documentaire</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container project-highlight-section">
+        <h2>Architecture & Interactivité</h2>
+        <p>Pour ce projet, j'ai mis l'accent sur une navigation intuitive et des composants JavaScript sur-mesure pour
+            dynamiser le contenu statique.</p>
+
+        <div class="two-col">
+            <div class="col-visual">
+                <div class="code-block">
+                    // Fonction générique de carrousel développée pour le projet
+                    function setupCarousel(container, items, prevBtn, nextBtn) {
+                    let activeIndex = 0;
+                    // Gestion des classes 'active', 'prev', 'next'
+                    // pour l'effet Cover Flow
+                    updateCarousel();
+
+                    nextBtn.addEventListener('click', () => {
+                    activeIndex = (activeIndex + 1) % items.length;
+                    updateCarousel();
+                    });
+                    }
+                </div>
+            </div>
+            <div class="col-content">
+                <h3>Composants Custom JS</h3>
+                <p>J'ai développé plusieurs fonctionnalités clés pour enrichir l'UX :</p>
+                <ul>
+                    <li><strong>Carrousel "Cover Flow"</strong> : Un système de navigation fluide pour la galerie photo
+                        et les articles, gérant dynamiquement les plans de profondeur en CSS.</li>
+                    <li><strong>Lecteur Audio Thématique</strong> : Intégration d'un lecteur interactif avec une
+                        animation de vinyle tournant pour les témoignages audio.</li>
+                    <li><strong>Système de Modales</strong> : Pour permettre une lecture immersive des articles sans
+                        quitter la page principale.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container">
+        <h2>Bilan du projet</h2>
+        <div class="two-col">
+            <div class="col-content">
+                <p>Ce travail a été une excellente opportunité de lier mes compétences techniques en développement web à
+                    ma passion pour l'image. J'ai dû :</p>
+                <ul>
+                    <li><strong>Coordonner</strong> l'intégration de médias produits par l'ensemble du groupe (5
+                        personnes).</li>
+                    <li><strong>Optimiser</strong> les performances pour garantir un chargement rapide malgré le poids
+                        des ressources visuelles.</li>
+                    <li><strong>Respecter</strong> scrupuleusement l'identité visuelle définie par l'équipe design tout
+                        en l'enrichissant d'animations interactives.</li>
+                </ul>
+            </div>
+            <div class="col-visual">
+                <div class="project-stat-container">
+                    <div class="stat-card">
+                        <div class="stat-score">5</div>
+                        <div class="stat-label">Pages Web</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-score">100%</div>
+                        <div class="stat-label">Vanilla JS</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-score">12</div>
+                        <div class="stat-label">Galerie Photo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container project-footer-section">
+        <a href="index.html#projects" class="btn-download ripple">
+            ← Retour aux projets
+        </a>
+    </section>
+
+    <footer id="contact" class="footer container">
+        <h2>Contact</h2>
+        <p>Intéressé par mon profil ? Discutons-en.</p>
+        <div class="btn-contact ripple">
+            <span class="default-text">Me contacter</span>
+            <span class="hover-content">maxence.coste.mc@gmail.com</span>
+        </div>
+        <hr class="footer-separator">
+        <div class="footer-bottom">
+            <p>© 2025 Maxence Coste — Tous droits réservés</p>
+            <a href="https://www.linkedin.com/in/maxence-c-62aaa0264/" target="_blank"
+                class="footer-link ripple">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -69,9 +69,16 @@
             <a href="index.html#about" class="tooltip" data-label="À propos">
                 <img src="images/icons/info_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="À propos">
             </a>
-            <a href="index.html#projects" class="tooltip" data-label="Mes projets">
-                <img src="images/icons/folder_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mes projets">
-            </a>
+            <!-- Projet parent avec sous-élément -->
+            <div class="nav-breadcrumb">
+                <a href="index.html#projects" class="tooltip breadcrumb-parent" data-label="Mes projets">
+                    <img src="images/icons/folder_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mes projets">
+                </a>
+                <div class="breadcrumb-child">
+                    <span class="breadcrumb-connector"></span>
+                    <span class="breadcrumb-current" data-label="20 Bornes">20B</span>
+                </div>
+            </div>
             <a href="#contact" class="tooltip" data-label="Contact">
                 <img src="images/icons/person_book_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Contact">
             </a>

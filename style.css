@@ -40,6 +40,11 @@ body {
   margin: 0;
   transition: background var(--transition), color var(--transition);
   overflow-x: hidden;
+  max-width: 100vw;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 .container {
@@ -840,15 +845,43 @@ body.dark .footer-link:hover img {
   .nav-links {
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0;
     width: 100%;
+    max-width: 320px;
   }
 
   .nav-links a {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     width: 100%;
     justify-content: center;
-    padding: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--surface-container);
+    border: 1px solid var(--outline);
+    border-bottom: none;
+    border-radius: 0;
+    color: var(--on-surface);
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  }
+
+  .nav-links a:first-child {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: 1px solid var(--outline);
+    border-radius: 0 0 20px 20px;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:active {
+    background: var(--primary-container);
+    color: var(--primary);
+    transform: scale(1.02);
+  }
+
+  .nav-links a::before {
+    display: none;
+    /* Désactiver l'effet liquide sur mobile pour un design plus clair */
   }
 
   /* Masquer les icônes dans le menu mobile pour plus de clarté, ou les garder, au choix.
@@ -1160,6 +1193,89 @@ body.dark .tooltip::after {
   color: #f0f0f0;
 }
 
+/* === Breadcrumb Navigation (Fil d'Ariane) === */
+.nav-breadcrumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.breadcrumb-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -2px;
+}
+
+.breadcrumb-connector {
+  width: 2px;
+  height: 8px;
+  background: var(--primary);
+  opacity: 0.5;
+  border-radius: 1px;
+}
+
+.breadcrumb-current {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.02rem;
+  cursor: default;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(103, 80, 164, 0.3);
+}
+
+.breadcrumb-current:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(103, 80, 164, 0.4);
+}
+
+/* Tooltip pour breadcrumb-current */
+.breadcrumb-current::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 130%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 0.5rem;
+  background: none;
+  color: var(--on-surface, #222);
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 0;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Afficher le label quand side-menu est visible et tooltip show-label est actif */
+.side-menu:not(.hidden) .breadcrumb-current::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(6px);
+}
+
+body.dark .breadcrumb-current {
+  box-shadow: 0 2px 6px rgba(208, 188, 255, 0.25);
+}
+
+body.dark .breadcrumb-current:hover {
+  box-shadow: 0 4px 12px rgba(208, 188, 255, 0.35);
+}
+
+body.dark .breadcrumb-current::after {
+  color: #f0f0f0;
+}
 
 /* Responsive : cacher sur mobile */
 @media (max-width: 768px) {
@@ -1434,6 +1550,56 @@ body.dark .btn-back-to-top:hover img {
   .project-hero h1 {
     font-size: 2.2rem;
   }
+
+  /* Fix pour les paragraphes trop collés aux bords sur mobile */
+  .project-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .project-section p {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Fix pour le débordement horizontal causé par les stat-cards */
+  .project-stat-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .col-visual {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-card {
+    min-width: unset;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .project-highlight-section {
+    padding: 1.5rem;
+  }
+
+  /* Fix pour le bouton de retour aux projets */
+  .project-footer-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .project-footer-section .btn-download {
+    white-space: normal;
+    text-align: center;
+    max-width: calc(100% - 2rem);
+    word-wrap: break-word;
+  }
 }
 
 /* Styles extraits des attributs style="..." */
@@ -1493,11 +1659,20 @@ body.dark .btn-back-to-top:hover img {
 .project-footer-section {
   text-align: center;
   padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.project-footer-section h2 {
+  margin-bottom: 0;
 }
 
 .project-footer-text {
-  max-width: 800px;
-  margin: 0 auto 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* === New Project Specifics (Decathlon/Oishi) === */

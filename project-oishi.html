@@ -66,9 +66,16 @@
             <a href="index.html#about" class="tooltip" data-label="À propos">
                 <img src="images/icons/info_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="À propos">
             </a>
-            <a href="index.html#projects" class="tooltip" data-label="Mes projets">
-                <img src="images/icons/folder_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mes projets">
-            </a>
+            <!-- Projet parent avec sous-élément -->
+            <div class="nav-breadcrumb">
+                <a href="index.html#projects" class="tooltip breadcrumb-parent" data-label="Mes projets">
+                    <img src="images/icons/folder_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Mes projets">
+                </a>
+                <div class="breadcrumb-child">
+                    <span class="breadcrumb-connector"></span>
+                    <span class="breadcrumb-current" data-label="Oishi">OIS</span>
+                </div>
+            </div>
             <a href="#contact" class="tooltip" data-label="Contact">
                 <img src="images/icons/person_book_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Contact">
             </a>
@@ -102,7 +109,7 @@
         <div class="project-meta">
             <div class="meta-item">
                 <h4>Mon Rôle</h4>
-                <p>Développeur Fullstack</p>
+                <p>Chef d'équipe & Fullstack</p>
             </div>
             <div class="meta-item">
                 <h4>L'Équipe</h4>
@@ -110,7 +117,7 @@
             </div>
             <div class="meta-item">
                 <h4>Stack Technique</h4>
-                <p>Angular, PHP (API), MySQL</p>
+                <p>Angular, PHP (API), MySQL, Trello</p>
             </div>
         </div>
     </section>
@@ -191,8 +198,8 @@ if($num > 0){
         <div class="two-col">
             <div class="col-content">
                 <p>Ce projet de SAE est une excellente opportunité de monter en compétences sur des technologies très
-                    demandées (Angular). Travailler à 4 nous oblige aussi à utiliser des outils de versioning (Git) et à
-                    coordonner nos tâches.</p>
+                    demandées (Angular). En tant que chef d'équipe, j'ai coordonné les tâches via
+                    <strong>Trello</strong> tout en assurant le versioning avec Git.</p>
                 <p>Le principal défi reste l'intégration complète de l'API avec tous les composants du frontend, mais
                     les briques principales (Auth, Data Fetching) sont posées.</p>
             </div>

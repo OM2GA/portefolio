@@ -67,20 +67,7 @@ const style = document.createElement('style');
 style.textContent = `@keyframes ripple { to { transform: scale(4); opacity: 0; } }`;
 document.head.appendChild(style);
 
-document.querySelectorAll('.nav-links a, .side-menu a').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
 
-    if (href && href.startsWith('#')) {
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        window.scrollTo({ top: target.offsetTop - 70, behavior: "smooth" });
-      }
-    }
-
-  });
-});
 
 
 
@@ -268,3 +255,51 @@ if (burgerMenu && navContent) {
     });
   });
 }
+
+// === Smooth Scrolling with Custom Animation ===
+function smoothScrollTo(targetElement, duration = 800) {
+  const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 90; // 90px offset for fixed header
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  let startTime = null;
+
+  // Easing function for smooth animation (easeInOutCubic)
+  function easeInOutCubic(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const ease = easeInOutCubic(progress);
+
+    window.scrollTo(0, startPosition + distance * ease);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  requestAnimationFrame(animation);
+}
+
+document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    // Check if it's a link to the current page
+    const targetUrl = new URL(this.href, window.location.href);
+    if (targetUrl.pathname === window.location.pathname && targetUrl.origin === window.location.origin) {
+      const targetId = targetUrl.hash;
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        smoothScrollTo(target, 800); // 800ms duration for visible smooth scroll
+        // Update URL hash without jumping
+        history.pushState(null, null, targetId);
+      }
+    }
+  });
+});

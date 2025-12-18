@@ -123,19 +123,19 @@ window.addEventListener('scroll', () => {
   }
 
 
-  document.querySelectorAll('.tooltip').forEach(el => el.classList.remove('show-label'));
+  document.querySelectorAll('.tooltip, .breadcrumb-current').forEach(el => el.classList.remove('show-label'));
   clearTimeout(scrollTimeout);
 
 
   scrollTimeout = setTimeout(() => {
     if (currentScroll > 50) {
-      document.querySelectorAll('.tooltip').forEach(el => el.classList.add('show-label'));
+      document.querySelectorAll('.tooltip, .breadcrumb-current').forEach(el => el.classList.add('show-label'));
     }
   }, 700);
 
   scrollTimeout = setTimeout(() => {
     if (currentScroll > 50) {
-      document.querySelectorAll('.tooltip').forEach(el => el.classList.add('show-label'));
+      document.querySelectorAll('.tooltip, .breadcrumb-current').forEach(el => el.classList.add('show-label'));
     }
   }, 700);
 
@@ -150,7 +150,7 @@ window.addEventListener('scroll', () => {
 window.addEventListener('load', () => {
   if (window.scrollY > 50) {
     if (sideMenu) sideMenu.classList.remove('hidden');
-    document.querySelectorAll('.tooltip').forEach(el => el.classList.add('show-label'));
+    document.querySelectorAll('.tooltip, .breadcrumb-current').forEach(el => el.classList.add('show-label'));
   }
 });
 

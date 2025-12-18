@@ -1259,8 +1259,8 @@ body.dark .tooltip::after {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Afficher le label quand side-menu est visible et tooltip show-label est actif */
-.side-menu:not(.hidden) .breadcrumb-current::after {
+/* Afficher le label quand show-label est actif (comme les autres tooltips) */
+.breadcrumb-current.show-label::after {
   opacity: 1;
   transform: translateY(-50%) translateX(6px);
 }
